@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  
+  layout "posts"
+
   def index
     @posts = Post.all
   end
@@ -10,6 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    render layout: "crud"
   end
 
   def create
@@ -22,8 +24,19 @@ class PostsController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @post = Post.find(params[:id])
+    render layout: "crud"
+  end
 
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render :edit
+    end
   end
 
   def destroy

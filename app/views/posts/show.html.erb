@@ -1,4 +1,8 @@
 <div class="blog-post">
   <h2 class="blog-post-title"><%= @post.title %></h2>
-  <%= @post.body %>
+  <%= @post.body.html_safe %>
+</div>
+
+<div>
+<%= link_to "Editar", edit_post_path(@post) %>
 </div>
