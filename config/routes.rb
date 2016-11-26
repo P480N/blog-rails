@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :posts
+
   get 'posts/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
