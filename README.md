@@ -1,2 +1,2 @@
 # blog-rails
-Blog personal desarrollador en Ruby on Rails
+Blog desarrollado en Ruby on Rails
