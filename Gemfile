@@ -55,3 +55,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 
 gem "font-awesome-rails"
+
+gem 'devise'

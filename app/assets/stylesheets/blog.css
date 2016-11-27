@@ -169,3 +169,13 @@ h6, .h6 {
   color: red;
   margin-bottom: 1em;
 }
+
+.form-signin{
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+label{
+  font-weight: normal !important;
+}

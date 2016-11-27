@@ -11,11 +11,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    render layout: "crud"
+    render layout: "application"
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     
     if @post.save
       redirect_to @post
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    render layout: "crud"
+    render layout: "application"
   end
 
   def update

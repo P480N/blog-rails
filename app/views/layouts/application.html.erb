@@ -7,12 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <%= render :partial => "shared/menu" %>
-
   <div id="main-container" class="container">
     <div class="row">
       <div class="col-sm-12 blog-main">
+        <%= render :partial => "shared/alerts" %>
         <%= yield %>
       </div>        
     </div>
