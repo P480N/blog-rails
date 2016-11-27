@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
-  layout "posts"
+
+  before_action :validate_user, except: [:show, :index]
+
+  layout "application", except: [:index, :show]
 
   def index
     @posts = Post.all
@@ -11,7 +14,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    render layout: "application"
   end
 
   def create
@@ -26,7 +28,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    render layout: "application"
   end
 
   def update
@@ -49,6 +50,12 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body)
+  end
+
+  def validate_user
+    unless user_signed_in?
+      redirect_to new_user_session_path, notice: "Necesitas iniciar sesión"
+    end
   end
 
 end

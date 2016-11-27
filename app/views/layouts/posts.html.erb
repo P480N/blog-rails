@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= render :partial => "shared/menu" %>
+  <%= render :partial => "shared/header" %>
   <div id="main-container" class="container">
     <div class="row">
       <div class="col-sm-8 blog-main">
@@ -19,5 +10,3 @@
       </div>
     </div>
   </div>
-</body>
-</html>
