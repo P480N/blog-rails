@@ -16,9 +16,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: "form-control comentario" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Comentar", class: "btn btn-primary" %>
   </div>
 <% end %>
