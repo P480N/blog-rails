@@ -6,16 +6,18 @@
   <%= @post.body.html_safe %>
 </div>
 
-<div>
-  <h3>Comentarios</h3>
-  <%= render "comments/form" %>
-  <ul id="comments-box">
-  	<% @post.comments.each do |comment| %>
-  	<li><%= comment.body %> - <%= comment.user.email %></li>
-  	<% end %>
-  </ul>
-</div>
+<% if user_signed_in? %>
+  <div>
+    <h3>Comentarios</h3>
+    <%= render "comments/form" %>
+    <ul id="comments-box">
+    	<% @post.comments.each do |comment| %>
+    	<li><%= comment.body %> - <%= comment.user.email %></li>
+    	<% end %>
+    </ul>
+  </div>
 
-<div>
-<%= link_to "Editar", edit_post_path(@post) %>
-</div>
+  <div>
+  <%= link_to "Editar", edit_post_path(@post) %>
+  </div>
+<% end %>
