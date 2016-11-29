@@ -2,17 +2,49 @@
 Blog desarrollado en Ruby on Rails 4.2.6
 
 ## Requisitos para instalar la aplicación:
-Tener instalado Ruby 2.3.0p0
+Tener instalado 
+- Ruby 2.3.0p0
+- MySQL (u otro motor de BD)
+- libmysqlclient-dev
+- imagemagick
 
 ## Instalación
 
 La instalación de la aplicación se realiza por línea de comandos.
 
-Primero se instalar las gemas del proyecto:
+Instalar libmysqlclient-dev:
 
 ```sh
 $ sudo apt-get install libmysqlclient-dev
+```
+
+Primero se instalar las gemas del proyecto:
+
+```sh
 $ bundle install
+```
+
+Instalar imagemagick:
+
+En Ubuntu 14.04.
+
+Primero instalar imagemagick y luego libmagickwand-dev:
+
+```sh
+$ sudo apt-get install imagemagick
+$ sudo apt-get install libmagickwand-dev
+```
+
+En Mac OS X:
+
+```sh
+$ brew install imagemagick
+```
+
+Para verificar si quedo correctamente instalado:
+
+```sh
+$ convert -version
 ```
 
 Luego se debe crea la BD:
