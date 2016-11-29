@@ -3,6 +3,9 @@
   <% unless @post.user.nil? %>
   <p>Por: <%= @post.user.email %></p>
   <% end %>
+  <div>
+    <%= image_tag @post.cover.url(:thumb) %>
+  </div>
   <%= @post.body.html_safe %>
 </div>
 
