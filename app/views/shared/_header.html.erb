@@ -23,7 +23,7 @@
         <li class="active"><%= link_to "Posts", posts_path %></li>
 
         <% @categories.each do |category| %>
-          <li><a href="#"><%= category.name %></a></li>
+          <li><%= link_to category.name, category %></li>
         <% end %>
 
         <% if user_signed_in? %>
