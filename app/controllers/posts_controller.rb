@@ -14,12 +14,13 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post       = Post.new
+    @categories = Category.all
   end
 
   def create
-    @post = current_user.posts.new(post_params)
-    
+    @post            = current_user.posts.new(post_params)
+    @post.categories = params[:categories]
     if @post.save
       redirect_to @post
     else
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :cover)
+    params.require(:post).permit(:title, :body, :cover, :categories)
   end
 
   def set_post

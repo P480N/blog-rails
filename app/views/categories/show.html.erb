@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<h1 style="color: <%= @category.color %>;"><%= @category.name %></h1>
+<hr/>
 
-<p>
-  <strong>Color:</strong>
-  <%= @category.color %>
-</p>
+<% @category.posts.each do |post| %>
+  <div class="blog-post">
+    <h2 class="blog-post-title"><%= link_to post.title, post, class: "post-title" %></h2>
+      <%= post.body.html_safe %> 
+      <% if user_signed_in? %> - <%= link_to "Eliminar", post, method: :delete %> <% end %>
+  </div>
+<% end %>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %>
+<% end %>
