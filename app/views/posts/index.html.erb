@@ -1,8 +1,7 @@
 <% @posts.each do |post| %>
-	<div class="blog-post">
-	  <h2 class="blog-post-title"><%= link_to post.title, post %></h2>
-	  <% if user_signed_in? %>
-	  	<%= post.body.html_safe %> - <%= link_to "Eliminar", post, method: :delete %>
-	  <% end %>
-	</div>
+  <div class="blog-post">
+    <h2 class="blog-post-title"><%= link_to post.title, post, class: "post-title" %></h2>
+      <%= post.body.html_safe %> 
+      <% if user_signed_in? %> - <%= link_to "Eliminar", post, method: :delete %> <% end %>
+  </div>
 <% end %>

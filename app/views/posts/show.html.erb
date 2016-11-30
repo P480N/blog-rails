@@ -1,11 +1,16 @@
 <div class="blog-post">
   <h2 class="blog-post-title"><%= @post.title %></h2>
+  
   <% unless @post.user.nil? %>
   <p>Por: <%= @post.user.email %></p>
   <% end %>
-  <div>
-    <%= image_tag @post.cover.url(:thumb) %>
-  </div>
+
+  <% unless @post.cover.url.eql? "/covers/original/missing.png" %>
+    <div>
+      <%= image_tag @post.cover.url(:thumb) %>
+    </div>
+  <% end %>
+  
   <%= @post.body.html_safe %>
 </div>
 
