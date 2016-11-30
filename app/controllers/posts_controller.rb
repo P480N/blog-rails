@@ -2,6 +2,8 @@ class PostsController < ApplicationController
 
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_post, except: [:index, :new, :create]
+  before_action :authenticate_editor!, only: [:new, :create, :update]
+  before_action :authenticate_admin!, only: [:destroy]
 
   layout "application", except: [:index, :show]
 
