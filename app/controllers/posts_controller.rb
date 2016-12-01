@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_post, except: [:index, :new, :create]
   before_action :authenticate_editor!, only: [:new, :create, :update]
@@ -8,7 +7,7 @@ class PostsController < ApplicationController
   layout "application", except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = Post.publicados.ultimos
   end
 
   def show
