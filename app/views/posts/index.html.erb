@@ -1,11 +1,18 @@
 <h1>Posts</h1>
 <hr/>
 
+<div class="row">
 <% @posts.each do |post| %>
-  <div class="blog-post">
+  <div class="col-md-4">
+    <div>
+      <a href="#" class="thumbnail">
+        <img src="<%= post.cover.url(:thumb) %>" alt="...">
+      </a>
+    </div>
     <h2 class="blog-post-title"><%= link_to post.title, post, class: "post-title" %></h2>
-      <%= Sanitize.fragment(post.body, Sanitize::Config::RELAXED).html_safe %>
+  <%= truncate(Sanitize.fragment(post.body).html_safe, length: 20) %>﻿
   </div>
 <% end %>
+</div>
 
 <%= will_paginate @posts %>
