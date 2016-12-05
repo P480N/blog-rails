@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   layout "application", except: [:index, :show]
 
   def index
-    @posts = Post.publicados.ultimos
+    @posts = Post.paginate(page: params[:page], per_page: 5).publicados.ultimos
   end
 
   def show

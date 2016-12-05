@@ -63,3 +63,5 @@ gem 'jquery-turbolinks'
 gem 'paperclip'
 
 gem 'aasm'
+
+gem 'will_paginate'

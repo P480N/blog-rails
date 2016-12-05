@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
 
   scope :publicados, ->{ where(state: "published") }
 
-  scope :ultimos, ->{ order("created_at DESC").limit(10) }
+  scope :ultimos, ->{ order("created_at DESC") }
 
   def self.publicados
     Post.where(state: "published")
