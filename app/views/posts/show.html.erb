@@ -17,7 +17,7 @@
     </div>
   <% end %>
   
-  <%= @post.body.html_safe %>
+  <%= Sanitize.fragment(@post.body, Sanitize::Config::RELAXED).html_safe %>
 </div>
 
 <% if user_signed_in? %>

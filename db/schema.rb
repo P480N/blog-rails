@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201135003) do
+ActiveRecord::Schema.define(version: 20161205164625) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161201135003) do
     t.integer  "cover_file_size",    limit: 4
     t.datetime "cover_updated_at"
     t.string   "state",              limit: 255,   default: "in_draft"
+    t.text     "markup_body",        limit: 65535
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
