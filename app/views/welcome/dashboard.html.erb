@@ -1,0 +1,14 @@
+<h1>Posts</h1>
+<hr/>
+
+<% @posts.each do |post| %>
+  <div class="blog-post">
+    <h2 class="blog-post-title"><%= link_to post.title, post, class: "post-title" %></h2>
+      <%= post.body.html_safe %> 
+      <% if user_signed_in? %> - <%= link_to "Eliminar", post, class: "red", method: :delete %> <% end %>
+
+      <% if post.may_publish? %>
+       - <%= link_to "Publicar", "/posts/#{post.id}/publish", class: "blue", method: :put %> 
+       <% end %>
+  </div>
+<% end %>
