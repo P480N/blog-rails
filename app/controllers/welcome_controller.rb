@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
   end
 
   def dashboard
-    @posts = Post.all
+    @posts = Post.all.ultimos
   end
 
 end

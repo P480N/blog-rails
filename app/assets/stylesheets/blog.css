@@ -141,6 +141,7 @@ h6, .h6 {
   margin-bottom: 60px;
 }
 .blog-post-title {
+  color: rgba(12, 60, 38, 1);
   margin-bottom: 5px;
   font-size: 32px;
   font-weight: 700;
@@ -208,6 +209,10 @@ label{
 
 #main-container a{
   color: #44b78b !important;
+}
+
+#main-container a.post-title{
+  color: rgba(12, 60, 38, 1) !important;
 }
 
 .text-center{

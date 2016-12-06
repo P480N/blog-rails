@@ -6,10 +6,13 @@
   <% end %>
 
   <div>
+    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> &nbsp;
   <% @post.categories.each do |category| %>
-    <%= link_to category.name, category, style: "color: #{category.color};" %>
+    <span class="label label-success"><%= link_to category.name, category, style: "color: white !important;" %></span>
   <% end %>
-  <div>
+  </div>
+
+  <br>
 
   <% unless @post.cover.url.eql? "/covers/original/missing.png" %>
     <div>
@@ -33,7 +36,10 @@
     </ul>
   </div>
 
+  <% if current_user.is_admin? %>
   <div>
-  <%= link_to "Editar", edit_post_path(@post) %>
+    <a href="<%= edit_post_path(@post) %>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
   </div>
+  <% end %>
+  
 <% end %>

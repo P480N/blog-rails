@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1 style="color: <%= @category.color %>;"><%= @category.name %></h1>
+<h1><%= @category.name %></h1>
 <hr/>
 
 <% @category.posts.each do |post| %>
@@ -9,7 +7,11 @@
     <div class="blog-post">
       <h2 class="blog-post-title"><%= link_to post.title, post, class: "post-title" %></h2>
       <%= post.body.html_safe %> 
-      <% if user_signed_in? %> - <%= link_to "Eliminar", post, method: :delete %> <% end %>
+
+      <% if user_signed_in? && current_user.is_admin? && post.may_unpublish? %>
+       - <%= link_to "Ocultar", "/posts/#{post.id}/unpublish", class: "blue", method: :put %> 
+      <% end %>
+
     </div>
   <% end %>
   

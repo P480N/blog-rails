@@ -25,8 +25,7 @@
                   <li><%= link_to "Dashboard", '/dashboard' %></li>
                   <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %></li>
                 <% else %>
-                  <li><%= link_to "Iniciar sesión", new_user_session_path %></li>
-                  <li><%= link_to "Crear cuenta", new_user_registration_path %></li>
+                  <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Iniciar sesión</a></li>
                 <% end %>
               </ul>
           </div>
