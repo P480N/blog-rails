@@ -1,10 +1,8 @@
-<script type="text/javascript">
+<script>
 $(document).ready(function () {
-  var url = window.location;
-  console.log(url);
-  $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+  $('ul.nav a[href="'+ window.location +'"]').parent().addClass('active');
   $('ul.nav a').filter(function() {
-     return this.href == url;
+     return this.href == window.location;
   }).parent().addClass('active');
 });
 </script> 
