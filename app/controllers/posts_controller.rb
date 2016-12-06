@@ -51,6 +51,11 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
+  def unpublish
+    @post.unpublish!
+    redirect_to @post
+  end
+
   private
 
   def post_params

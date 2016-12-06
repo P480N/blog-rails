@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'welcome#dashboard'
 
   put '/posts/:id/publish', to: 'posts#publish'
+  put '/posts/:id/unpublish', to: 'posts#unpublish'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

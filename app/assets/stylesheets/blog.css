@@ -192,3 +192,41 @@ a.post-title{
 .blue{
   color: #000cff;
 }
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.cover-height{
+  height: 250px;
+}
+
+.background-cover{
+  background-position: center;
+  background-size: cover;
+}
+
+.color-white a, p{
+  color: #FFF;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.margin-top{
+  margin-top:1em;
+  padding-top:5px;
+}

@@ -10,5 +10,9 @@
       <% if post.may_publish? %>
        - <%= link_to "Publicar", "/posts/#{post.id}/publish", class: "blue", method: :put %> 
        <% end %>
+
+      <% if post.may_unpublish? %>
+       - <%= link_to "Ocultar", "/posts/#{post.id}/unpublish", class: "blue", method: :put %> 
+       <% end %>
   </div>
 <% end %>
