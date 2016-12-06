@@ -1,0 +1,11 @@
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <% unless post.cover.url.eql? "/covers/original/missing.png" %>
+      <img src="<%= post.cover.url %>" alt="cover">
+    <% end %>
+    <div class="caption text-center">
+      <h3><%= link_to post.title, post, class: "post-title" %></h3>
+      <%= truncate(Sanitize.fragment(post.body).html_safe, length: 30) %>﻿
+    </div>
+  </div>
+</div>
