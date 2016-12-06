@@ -69,3 +69,5 @@ gem 'will_paginate'
 gem 'epic-editor-rails'
 
 gem 'sanitize'
+
+gem 'awesome_print'

@@ -4,11 +4,15 @@
 <hr/>
 
 <% @category.posts.each do |post| %>
-  <div class="blog-post">
-    <h2 class="blog-post-title"><%= link_to post.title, post, class: "post-title" %></h2>
+  
+  <% if post.state.eql? "published" %>
+    <div class="blog-post">
+      <h2 class="blog-post-title"><%= link_to post.title, post, class: "post-title" %></h2>
       <%= post.body.html_safe %> 
       <% if user_signed_in? %> - <%= link_to "Eliminar", post, method: :delete %> <% end %>
-  </div>
+    </div>
+  <% end %>
+  
 <% end %>
 
 <% if user_signed_in? %>
