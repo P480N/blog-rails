@@ -181,10 +181,6 @@ label{
   font-weight: normal !important;
 }
 
-a.post-title{
-  color: #333;
-}
-
 .red{
   color: #ff5733;
 }
@@ -210,8 +206,8 @@ a.post-title{
   background-size: cover;
 }
 
-.color-white a, p{
-  color: #FFF;
+#main-container a{
+  color: #44b78b !important;
 }
 
 .text-center{
@@ -229,4 +225,10 @@ a.post-title{
 .margin-top{
   margin-top:1em;
   padding-top:5px;
+}
+
+.btn-primary{
+  background-color: #44b78b !important;
+  border-color: rgba(31, 105, 78, 1) !important;
+  color: #fff !important;
 }
