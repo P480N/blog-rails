@@ -13,6 +13,7 @@ class Post < ActiveRecord::Base
   validates :body, presence: true, length: {minimum: 20}
 
   after_create :save_categories
+  after_create :send_mail
 
   has_attached_file :cover, styles: { medium: "1280x720", thumb: "400x300" }
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
@@ -44,7 +45,11 @@ class Post < ActiveRecord::Base
 
   private
 
-  def save_categories()
+  def send_mail
+    PostMailer.new_post(self).deliver_later
+  end
+
+  def save_categories
     unless @categories.nil?
       @categories.each do |category_id|
         HasCategory.create(category_id: category_id, post_id: self.id)

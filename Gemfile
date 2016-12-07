@@ -71,3 +71,5 @@ gem 'epic-editor-rails'
 gem 'sanitize'
 
 gem 'awesome_print'
+
+gem 'letter_opener'

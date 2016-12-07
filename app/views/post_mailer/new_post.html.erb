@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+  <h1><%= @post.title %></h1>
+  <p>
+    <%= truncate(Sanitize.fragment(@post.body).html_safe, length: 30) %>﻿
+  </p>
+  <p>
+    <%= link_to "Leer más", post_url(@post) %>
+  </p>
+</body>
+</html>
